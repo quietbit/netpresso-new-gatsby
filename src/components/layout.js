@@ -1,6 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import BImage from "../components/StaticImage"
+import BackgroundImage from "../components/BackgroundImage"
+import StaticImage from "../components/StaticImage"
+import Hero from "../components/hero"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -24,7 +26,17 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
-      <BImage />
+      <Hero>
+        <div>
+          <div> askdjaskdasdas hero test</div>
+          <div> askdjaskdasdas hero test</div>
+          <div> askdjaskdasdas hero test</div>
+          <div> askdjaskdasdas hero test</div>
+          <div> askdjaskdasdas hero test</div>
+          <div> askdjaskdasdas hero test</div>
+        </div>
+      </Hero>
+
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

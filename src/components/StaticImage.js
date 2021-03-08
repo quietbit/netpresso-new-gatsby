@@ -8,7 +8,6 @@ const BImage = () => {
       alt="A dinosaur"
       placeholder="blurred"
       layout="fullWidth"
-      height={400}
     />
   )
 }
