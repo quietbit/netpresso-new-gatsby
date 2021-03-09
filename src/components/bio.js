@@ -13,15 +13,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      heroimage: file(relativePath: { eq: "profile-pic.png" }) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 1920
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-          )
-        }
-      }
       site {
         siteMetadata {
           author {
@@ -39,11 +30,9 @@ const Bio = () => {
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
-  const heroImage = getImage(data.heroimage)
 
   return (
     <div className="bio">
-      <div>test gatsbyimage</div>
       <StaticImage
         className="bio-avatar"
         layout="fixed"

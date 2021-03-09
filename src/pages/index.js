@@ -26,39 +26,47 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
+      <div className="container mt-5">
+        <div className="tile is-ancestor">
+          {posts.map(post => {
+            const title = post.frontmatter.title || post.fields.slug
 
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+            return (
+              <div className="tile is-parent">
+                <div className="card tile is-child" key={post.fields.slug}>
+                  <div className="card-content">
+                    <div className="subtitle">{title}</div>
+                    <section>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: post.frontmatter.description || post.excerpt,
+                        }}
+                        itemProp="description"
+                      />
+                    </section>
+                  </div>
+                  <footer class="card-footer is-centered">
+                    <div className="container has-text-centered p-3">
+                      <button
+                        className="button is-primary is-rounded has-text-black snipcart-add-item"
+                        data-item-id={post.frontmatter.dataItemId}
+                        data-item-price={post.frontmatter.dataItemPrice}
+                        data-item-name={post.frontmatter.dataItemName}
+                        data-item-description={
+                          post.frontmatter.dataItemDescription
+                        }
+                        data-item-url={`https://netpresso.netlify.app`}
+                      >
+                        do koszyka
+                      </button>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </Layout>
   )
 }
