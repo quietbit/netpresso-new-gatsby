@@ -1,0 +1,28 @@
+Hero
+------
+- sourcing z md
+    - title // req
+    - subtitle // option
+    - button text // req
+    - zdjęcie produktu // option
+    - background color // req
+    - tło hero // option
+    - tło produktu // default: brak
+
+- wersje hero
+    - tylko z tłem
+    - tylko z produktem
+    - z tłem i z produktem
+    // background color: req
+    // jak nie ma produktu idzie sam title
+    // jak nie ma tła hero idzie sam produkt + z tłem koloru
+
+- component ProductImage
+    - propsy -> image produktu i tło produktu / kolory do gradientu?
+    - z tłem
+    - bez tła
+    - z gradientem / glow lub bez
+
+    
+
+

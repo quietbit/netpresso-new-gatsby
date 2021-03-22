@@ -1,9 +1,5 @@
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-//import Image from "gatsby-image"
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   // const data = useStaticQuery(graphql`
@@ -65,21 +61,33 @@ const Navbar = () => {
           </Link>
         </div> */}
         <div className="navbar-end">
-          <Link className="navbar-item" to="/">
+          <Link
+            className="navbar-item is-size-6 has-text-weight-semibold"
+            to="/"
+          >
             Sklep
           </Link>
-          <Link className="navbar-item" to="/">
+          <Link
+            className="navbar-item is-size-6 has-text-weight-semibold"
+            to="/"
+          >
             Dostawa
           </Link>
-          <Link className="navbar-item" to="/">
+          <Link
+            className="navbar-item is-size-6 has-text-weight-semibold"
+            to="/"
+          >
             Rabaty
           </Link>
-          <Link className="navbar-item" to="/">
+          <Link
+            className="navbar-item is-size-6 has-text-weight-semibold"
+            to="/"
+          >
             O nas
           </Link>
-          <Link className="navbar-item mr-5 snipcart-checkout">
+          <Link className="navbar-item mr-5 snipcart-checkout ml-5">
             <span className="icon">
-              {/* <FontAwesomeIcon className="mr-3" icon={faShoppingCart} /> */}
+              <span className="material-icons mr-3">shopping_bag</span>
               <span title="Badge right" className="badge is-right">
                 <span className="has-text-black has-text-weight-bold">0</span>
               </span>
